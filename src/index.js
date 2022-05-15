@@ -13,7 +13,7 @@ var route = {
 }
 
 function getData(url, options) {
-    fetch(url, options)
+    return fetch(url, options)
         .then(inResponse => inResponse.json())
         .then(function(data) {
             return data;
@@ -22,15 +22,19 @@ function getData(url, options) {
 
 app.get('*', function(inRequest, outResponse) {
     console.log(inRequest);
-    outResponse.status = 200;
-    var inResponseData = getData(route.fetchRequest.url, route.fetchRequest.options);
-    console.log(inResponseData[1]);
-    outResponse.send(inResponseData);
-
+    getData(route.fetchRequest.url, route.fetchRequest.options)
+    .then(function(inResponseData) {
+        console.log(inResponseData[1]);
+        outResponse.send(inResponseData);
+        outResponse.status = 200;
+    });
 });
 
 app.listen(PORT, function() {
     console.log('Server is running on PORT:', PORT);
 });
 
-// getData(route.fetchRequest.url, route.fetchRequest.options);
+// getData(route.fetchRequest.url, route.fetchRequest.options)
+//     .then(function(data) {
+//         console.log(data[1])
+//     });
