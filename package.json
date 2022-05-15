@@ -1,6 +1,6 @@
 {
-    "name": "logoapi",
-    "version": "1.0.0",
+    "name": "api-transformer",
+    "version": "0.0.1",
     "description": "",
     "main": "index.js",
     "scripts": {
@@ -14,10 +14,9 @@
         }
     },
     "author": "",
-    "license": "ISC",
+    "license": "MIT",
     "dependencies": {
         "express": "^4.17.3",
-        "node-fetch": "^3.2.3",
         "npm-watch": "^0.11.0"
     },
     "type": "module"
