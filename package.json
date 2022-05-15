@@ -9,7 +9,9 @@
     },
     "watch": {
         "start": {
-            "patterns": ["src/*"],
+            "patterns": [
+                "src/*"
+            ],
             "extensions": "js,jsx"
         }
     },
@@ -17,6 +19,7 @@
     "license": "MIT",
     "dependencies": {
         "express": "^4.17.3",
+        "node-fetch": "^3.2.4",
         "npm-watch": "^0.11.0"
     },
     "type": "module"
